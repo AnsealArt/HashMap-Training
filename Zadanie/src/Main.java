@@ -15,31 +15,16 @@ public class Main {
                 "Office E", "Anna", "Marks"
         };
 
-        List<Person> officeAEmployees = new ArrayList();
-        List<Person> officeBEmployees = new ArrayList();
-        List<Person> officeCEmployees = new ArrayList();
+
+        Map<String, List<Person>> eMap = new TreeMap<>();
 
         for (int i = 0; i < employees.length; i += 3) {
-            if (employees[i].contains("office A")) {
-                officeAEmployees.add(new Person (employees[i+1], employees[i+2]));
+            if (!eMap.containsKey(employees[i])) {
+                eMap.put(employees[i], new ArrayList<>());
             }
-            if (employees[i].contains("office B")) {
-                officeBEmployees.add(new Person (employees[i+1], employees[i+2]));
-            }
-            if (employees[i].contains("office C")) {
-                officeCEmployees.add(new Person (employees[i+1], employees[i+2]));
-            }
+            eMap.get(employees[i]).add(new Person(employees[i+1], employees[i+2]));
         }
-
-        Map<String, List<Person>> employeesMap = new TreeMap<>();
-        for (int i = 0; i < employeesMap.size(); )
-        employeesMap.put("office A", officeAEmployees);
-        employeesMap.put("office B", officeBEmployees);
-        employeesMap.put("office C", officeCEmployees);
-
-        System.out.println(employeesMap);
-
-        biggestOffice(officeAEmployees, officeBEmployees, officeCEmployees);
+        System.out.println(eMap);
     }
 
     public static void biggestOffice (
