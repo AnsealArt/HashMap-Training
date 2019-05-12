@@ -11,6 +11,8 @@ public class Main {
                 "office C", "Cindy", "Frost",
                 "office A", "Kate", "Coe",
                 "office A", "Bill", "Brown",
+                "Office D", "Jon",  "Tare",
+                "Office E", "Anna", "Marks"
         };
 
         List<Person> officeAEmployees = new ArrayList();
