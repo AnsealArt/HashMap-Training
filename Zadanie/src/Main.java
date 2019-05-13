@@ -16,7 +16,7 @@ public class Main {
         };
 
 
-        Map<String, List<Person>> eMap = new TreeMap<>();
+        Map<String, List<Person>> eMap = new HashMap<>();
 
         for (int i = 0; i < employees.length; i += 3) {
             if (!eMap.containsKey(employees[i])) {
